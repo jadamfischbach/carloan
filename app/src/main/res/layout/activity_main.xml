@@ -2,10 +2,11 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity"
-    android:layout_margin="15dp">
+    android:layout_margin="15dp"
+    tools:context=".MainActivity">
 
     <LinearLayout
         android:id="@+id/car_cost_layout"
@@ -17,7 +18,7 @@
         <TextView
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Car Cost:"
+            android:text="@string/car_cost"
             android:textSize="20sp" />
 
         <EditText
@@ -25,125 +26,132 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Enter cost of car"
+            android:hint="@string/enter_cost_of_car"
+            android:importantForAutofill="no"
             android:inputType="numberDecimal"
+            android:textColorHint="#78909C"
             tools:ignore="TouchTargetSizeCheck" />
 
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/down_payment_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/car_cost_layout"
         app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/down_payment_layout">
+        app:layout_constraintTop_toBottomOf="@id/car_cost_layout">
 
         <TextView
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="Down Payment:"
-            android:textSize="20sp"/>
+            android:text="@string/down_payment"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/down_payment_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Enter down payment"
+            android:hint="@string/enter_down_payment"
+            android:importantForAutofill="no"
             android:inputType="numberDecimal"
+            android:textColorHint="#78909C"
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/interest_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/down_payment_layout"
         app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/interest_layout">
+        app:layout_constraintTop_toBottomOf="@id/down_payment_layout">
 
         <TextView
             android:layout_width="150dp"
             android:layout_height="wrap_content"
-            android:text="APR:"
-            android:textSize="20sp"/>
+            android:text="@string/apr"
+            android:textSize="20sp" />
 
         <EditText
             android:id="@+id/interest_edit"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:ems="10"
-            android:hint="Enter APR as percent"
+            android:hint="@string/enter_apr_as_percent"
+            android:importantForAutofill="no"
             android:inputType="numberDecimal"
+            android:textColorHint="#78909C"
             tools:ignore="TouchTargetSizeCheck" />
     </LinearLayout>
 
     <RadioGroup
+        android:id="@+id/radio_group"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/interest_layout"
-        app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/radio_group"
-        android:orientation="horizontal"
+        android:layout_marginTop="15dp"
         android:gravity="center"
-        android:layout_marginTop="15dp">
+        android:orientation="horizontal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/interest_layout">
 
         <RadioButton
             android:id="@+id/loan_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginRight="20dp"
+            android:layout_marginEnd="20dp"
             android:checked="true"
-            android:text="Loan"
-            tools:ignore="TouchTargetSizeCheck" />
+            android:text="@string/loan"
+            android:textColor="#00838F"
+            tools:ignore="TouchTargetSizeCheck,TextContrastCheck,TextContrastCheck" />
 
         <RadioButton
             android:id="@+id/lease_radio_button"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginLeft="20dp"
-            android:text="Lease"
+            android:layout_marginStart="20dp"
+            android:text="@string/lease"
             tools:ignore="TouchTargetSizeCheck" />
     </RadioGroup>
 
     <LinearLayout
+        android:id="@+id/seek_bar_label_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/radio_group"
-        app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/seek_bar_label_layout"
+        android:layout_marginTop="15dp"
         android:gravity="center"
-        android:layout_marginTop="15dp">
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/radio_group">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Length of Loan (months):"/>
+            android:text="@string/length_of_loan_months" />
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:id="@+id/seek_bar_label"
-            android:text="36"
-            android:layout_marginLeft="15dp"/>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:text="@string/_36" />
     </LinearLayout>
 
     <SeekBar
         android:id="@+id/seek_bar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/seek_bar_label_layout"
-        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginBottom="15dp"
         android:max="60"
         android:min="1"
         android:progress="36"
-        android:layout_marginBottom="15dp"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/seek_bar_label_layout" />
 
     <Button
         android:id="@+id/calc_button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Calculate"
+        android:text="@string/calculate"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -151,15 +159,15 @@
 
 
     <TextView
+        android:id="@+id/payment_label"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        app:layout_constraintTop_toBottomOf="@id/calc_button"
-        app:layout_constraintStart_toStartOf="parent"
-        android:id="@+id/payment_label"
-        android:textSize="30dp"
-        android:text="Monthly Payment:"
         android:layout_marginTop="20dp"
-        android:gravity="center"/>
+        android:gravity="center"
+        android:text="@string/monthly_payment"
+        android:textSize="30sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/calc_button" />
 
     <EditText
         android:id="@+id/payment_display"
@@ -171,10 +179,22 @@
         android:ems="5"
         android:focusable="false"
         android:gravity="center"
-        android:textSize="30dp"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/payment_label"
         tools:ignore="SpeakableTextPresentCheck" />
+
+    <Button
+        android:id="@+id/colorButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="50dp"
+        android:text="Color"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

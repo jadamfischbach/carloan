@@ -1,3 +1,15 @@
 <resources>
     <string name="app_name">Car Load Calculator</string>
+    <string name="car_cost">Car Cost:</string>
+    <string name="enter_cost_of_car">Enter cost of car</string>
+    <string name="down_payment">Down Payment:</string>
+    <string name="calculate">Calculate</string>
+    <string name="enter_down_payment">Enter down payment</string>
+    <string name="enter_apr_as_percent">Enter APR as percent</string>
+    <string name="lease">Lease</string>
+    <string name="_36">36</string>
+    <string name="length_of_loan_months">Length of Loan (months):</string>
+    <string name="monthly_payment">Monthly Payment:</string>
+    <string name="loan">Loan</string>
+    <string name="apr">APR:</string>
 </resources>
